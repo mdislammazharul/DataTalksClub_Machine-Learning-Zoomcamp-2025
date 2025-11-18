@@ -25,6 +25,10 @@ class PatientData(BaseModel):
 # Create FastAPI app
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"hello": "world"}
+
 # Define the prediction endpoint
 @app.post("/predict")
 def predict(data: PatientData):
